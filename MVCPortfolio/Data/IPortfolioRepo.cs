@@ -1,10 +1,13 @@
 ﻿using System;
+using System.Collections.Generic;
+using MVCPortfolio.Models;
+
 namespace MVCPortfolio.Data
 {
-    public class IPortfolioRepo
+    public interface IPortfolioRepo
     {
-        public IPortfolioRepo()
-        {
-        }
+        IEnumerable<Project> GetVisibleProjects();
+        IEnumerable<Project> GetProjectsByTag(string tag);
+        Project GetProjectById(int id);
     }
 }
